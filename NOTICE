@@ -1,0 +1,14 @@
+This product is a fork of PlayCanvas SuperSplat (the editor).
+
+Upstream:  https://github.com/playcanvas/supersplat
+Copyright: PlayCanvas Ltd.
+License:   MIT (see LICENSE)
+
+Modifications by GSplat Realestate add:
+- S3-backed QC workflow: load from a signed S3 GET URL (via the upstream
+  `?load=` URL param), save cleaned splat to a signed S3 PUT URL minted by our
+  Platform Services API.
+- Property metadata read from URL params (`?scene_id=<id>&token=<id-token>`).
+- QC-only UI mode (toggled by `?qc=1`) that hides non-essential editor panels.
+
+All upstream copyrights and license notices are preserved.

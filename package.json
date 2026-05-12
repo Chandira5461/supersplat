@@ -1,25 +1,26 @@
 {
-    "name": "supersplat",
-    "version": "2.25.1",
-    "author": "PlayCanvas<support@playcanvas.com>",
-    "homepage": "https://playcanvas.com/supersplat/editor",
-    "description": "3D Gaussian Splat Editor",
+    "name": "@gsplat-realestate/editor",
+    "version": "0.1.0",
+    "author": "GSplat Realestate",
+    "description": "Internal Gaussian-splat QC editor for the GSplat property tour platform. Fork of playcanvas/supersplat.",
     "keywords": [
         "playcanvas",
         "ply",
         "gaussian",
         "splat",
-        "editor"
+        "editor",
+        "real-estate",
+        "qc"
     ],
     "license": "MIT",
     "main": "index.js",
     "scripts": {
         "build": "rollup -c",
         "watch": "rollup -c -w",
-        "serve": "serve dist -C",
+        "serve": "serve dist -C -p 3002",
         "develop": "cross-env BUILD_TYPE=debug concurrently --kill-others \"npm run watch\" \"npm run serve\"",
-        "develop:auto-launch": "concurrently --kill-others \"xdg-open 'http://localhost:3000/'\" \"npm run watch\" \"npm run serve\"",
-        "lint": "eslint src"
+        "lint": "eslint src",
+        "type:check": "tsc --noEmit"
     },
     "engines": {
         "node": ">=20.19.0"

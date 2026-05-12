@@ -7,6 +7,7 @@ import { EditHistory } from './edit-history';
 import { registerEditorEvents } from './editor';
 import { Events } from './events';
 import { initFileHandler } from './file-handler';
+import { initGSplatQcMode } from './gsplat/qc-mode';
 import { registerIframeApi } from './iframe-api';
 import { registerPlySequenceEvents } from './ply-sequence';
 import { registerPublishEvents } from './publish';
@@ -263,6 +264,9 @@ const main = async () => {
             url: decoded
         }]);
     }
+
+    // gsplat QC mode — injects "Save Cleaned" panel when ?scene_id and ?token are present
+    initGSplatQcMode(events);
 
 
     // handle OS-based file association in PWA mode
